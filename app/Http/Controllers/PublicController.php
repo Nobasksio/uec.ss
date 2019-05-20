@@ -38,9 +38,6 @@ class PublicController extends Controller
         return view('restaurant/index');
     }
 
-    public function restaurantCreate(){
-        return view('restaurant/new');
-    }
     public function restaurantRedact(){
         return view('restaurant_redact');
     }
@@ -49,9 +46,6 @@ class PublicController extends Controller
         return view('position/list');
     }
 
-    public function positionCreat(){
-        return view('position/new');
-    }
     public function positionRedact(){
         return view('position_redact');
     }

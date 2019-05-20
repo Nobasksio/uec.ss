@@ -6,7 +6,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Список пользователей</h3>
+                <h3 class="box-title">Список ресторанов</h3>
 
                 <div class="box-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -23,19 +23,17 @@
                 <table class="table table-hover">
                     <tr>
                         <th>ID</th>
-                        <th>Имя</th>
+                        <th>Название</th>
                         <th>Дата создания</th>
-                        <th>Почта</th>
-                        <th>Должность</th>
+                        <th>Адрес</th>
                     </tr>
-                    @foreach($users as $key=>$user)
-                    <tr>
-                        <td>{{ $key+1 }}</td>
-                        <td>{{ $user['name'] }}</td>
-                        <td>{{ $user['created_at'] }}</td>
-                        <td>{{ $user['email'] }}</td>
-                        <td></td>
-                    </tr>
+                    @foreach($departments as $key=>$department)
+                        <tr>
+                            <td>{{ $key+1 }}</td>
+                            <td>{{ $department['name'] }}</td>
+                            <td>{{ $department['created_at'] }}</td>
+                            <td>{{ $department['address'] }}</td>
+                        </tr>
                     @endforeach
                 </table>
             </div>

@@ -13,23 +13,44 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" method="post">
                 <div class="box-body">
+                    @if(Session::has('success'))
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-check"></i> Успех!</h4>
+                            {{ Session::get('success') }}
+                        </div>
+                    @endif
+                    @if($errors->any())
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-ban"></i> Ошибка!</h4>
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>
+                                        $error
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">Название</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Фамилия Имя">
+                        <input type="text"  name='name' class="form-control" id="exampleInputEmail1" placeholder="Название">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Адрес</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Адрес">
+                        <input type="text" name='address' class="form-control" id="exampleInputEmail1" placeholder="Адрес">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Телефон</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Телефон">
+                        <input type="text" name='phone' class="form-control" id="exampleInputEmail1" placeholder="Телефон">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Часовой пояс</label>
-                        <<select class="form-control select2" style="width: 100%;">
+                        <select class="form-control select2" name='timeZone' style="width: 100%;">
                             <option selected="selected">Москва</option>
                             <option>Иркутск +5 </option>
                             <option>Лос Анжелес -7</option>
@@ -37,27 +58,18 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Категория</label>
-                        <select class="form-control select2" style="width: 100%;">
-                            <option selected="selected">Линейный персонал</option>
-                            <option>Управляющий</option>
-                            <option>Офисный сотрудник</option>
-                            <option>Ни рыба не меся</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="exampleInputEmail1">Описание</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="описание">
+                        <input type="text" name='description' class="form-control" id="exampleInputEmail1" placeholder="описание">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Режим работы</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Режим работы">
+                        <input type="text" name='time_work' class="form-control" id="exampleInputEmail1" placeholder="Режим работы">
                     </div>
 
 
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox"> Check me out
+                            <input type="checkbox" name="active"> Активность
                         </label>
                     </div>
                 </div>

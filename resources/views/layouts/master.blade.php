@@ -359,8 +359,8 @@
                         </span >
                     </a >
                     <ul class="treeview-menu" >
-                        <li ><a href="{{ route('restaurant_list') }}" ><i class="fa fa-circle-o" ></i > Список</a ></li >
-                        <li class="active" ><a href="{{ route('restaurant_creat') }}" ><i class="fa fa-circle-o" ></i > Создать новый</a ></li >
+                        <li ><a href="{{ route('department_list') }}" ><i class="fa fa-circle-o" ></i > Список</a ></li >
+                        <li class="active" ><a href="{{ route('department_create') }}" ><i class="fa fa-circle-o" ></i > Создать новый</a ></li >
                     </ul >
                 </li >
                 <li class=" treeview" >
@@ -374,7 +374,7 @@
                     </a >
                     <ul class="treeview-menu" >
                         <li ><a href="{{ route('position_list') }}" ><i class="fa fa-circle-o" ></i > Список</a ></li >
-                        <li class="active" ><a href="{{ route('position_creat') }}" ><i class="fa fa-circle-o" ></i > Создать новую</a ></li >
+                        <li class="active" ><a href="{{ route('position_create') }}" ><i class="fa fa-circle-o" ></i > Создать новую</a ></li >
                     </ul >
                 </li >
                 <li class=" treeview" >

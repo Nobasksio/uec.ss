@@ -15,13 +15,15 @@ Route::get('/', 'PublicController@index');
 
 Route::prefix('admin')->group(function(){
 
-    Route::get('restaurant','PublicController@restaurantList')->name('restaurant_list');
-    Route::get('restaurant_creat', 'PublicController@restaurantCreate')->name('restaurant_creat');
+    Route::get('department','DepartmentController@index')->name('department_list');
+    Route::get('department_create', 'DepartmentController@departmentCreate')->name('department_create');
+    Route::Post('department_create', 'DepartmentController@departmentCreatePost')->name('departmentCreatePost');
     Route::get('restaurant/{userId}', 'PublicController@restaurantRedact')->name('restaurant_redact');
 
-    Route::get('position','PublicController@positionList')->name('position_list');
-    Route::get('position_creat', 'PublicController@positionCreat')->name('position_creat');
-    Route::get('position/{userId}', 'PublicController@positionRedact')->name('position_redact');
+    Route::get('position','PositionController@index')->name('position_list');
+    Route::get('position_creat', 'PositionController@positionCreat')->name('position_create');
+    Route::post('position_creat', 'PositionController@positionCreatePost')->name('positionCreatePost');
+    Route::get('position/{userId}', 'PositionController@positionRedact')->name('position_redact');
 
     Route::get('user','PublicController@userlist')->name('user_list');
     Route::get('user_invite', 'PublicController@invite')->name('user_invite');
