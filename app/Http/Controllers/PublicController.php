@@ -15,24 +15,10 @@ class PublicController extends Controller
 
     public function userlist(){
         $users = User::all();
+
         return view('user/index',['users' => $users]);
     }
-    public function invite(){
-        return view('user/new');
-    }
-    public function invitePost(CreateInvite $request)
-    {
-        $invite = new Invite();
 
-        $invite->name = $request['name'];
-        $invite->email = $request['email'];
-        $invite->active = true;
-        $invite->hash = md5(uniqid());
-
-        $invite->save();
-
-        return back()->with('success','Приглашение успешно отправлено');
-    }
 
     public function restaurantList(){
         return view('restaurant/index');

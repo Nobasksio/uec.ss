@@ -58,25 +58,17 @@
                     <div class="form-group">
                         <label>Должность</label>
                         <select class="form-control select2" name='position' style="width: 100%;">
-                            <option selected="selected">Официант</option>
-                            <option>Повар</option>
-                            <option>Менеджер</option>
-                            <option>Су шеф</option>
-                            <option>Мойщик</option>
-                            <option>Управляющий</option>
-                            <option>Генерал губернатор</option>
+                            @foreach($positions as $position)
+                            <option value="{{ $position['id'] }}">{{ $position['name'] }} </option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Подразделение</label>
-                        <select class="form-control select2" name='restaurant' style="width: 100%;">
-                            <option selected="selected">Суши студио карла маркса</option>
-                            <option>Суши студио партизанская</option>
-                            <option>Суши студио яндринцева</option>
-                            <option>Суши студио Юбилейный</option>
-                            <option>Атрекот км</option>
-                            <option>Антрекот сильвер</option>
-                            <option>Суши Студио Калифорния</option>
+                        <select class="form-control select2" name='department' style="width: 100%;">
+                            @foreach($departments as $department)
+                                <option value="{{ $department['id'] }}">{{ $department['name'] }} </option>
+                            @endforeach
                         </select>
                     </div>
 

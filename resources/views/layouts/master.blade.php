@@ -388,6 +388,7 @@
                     </a >
                     <ul class="treeview-menu" >
                         <li ><a href="{{ route('user_list') }}" ><i class="fa fa-circle-o" ></i > Список</a ></li >
+                        <li ><a href="{{ route('invite_list') }}" ><i class="fa fa-circle-o" ></i > Приглашения</a ></li >
                         <li class="active" ><a href="{{ route('user_invite') }}" ><i class="fa fa-circle-o" ></i > Пригласить нового</a ></li >
                     </ul >
                 </li >
@@ -434,7 +435,7 @@
                     </a >
                     <ul class="treeview-menu" >
                         <li ><a href="index2.html" ><i class="fa fa-circle-o" ></i > Моя должность</a ></li >
-                        <li class="active" ><a href="index.html" ><i class="fa fa-circle-o" ></i > Общее</a ></li >
+                        <li class="active" ><a href="{{ route('article') }}" ><i class="fa fa-circle-o" ></i > Общее</a ></li >
                     </ul >
                 </li >
                 <li >

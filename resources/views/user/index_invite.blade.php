@@ -6,7 +6,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Список пользователей</h3>
+                <h3 class="box-title">Список приглашений</h3>
 
                 <div class="box-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -28,15 +28,23 @@
                         <th>Почта</th>
                         <th>Должность</th>
                         <th>Подразделение</th>
+                        <th>Статус</th>
                     </tr>
-                    @foreach($users as $key=>$user)
+                    @foreach($invites as $key=>$invite)
                     <tr>
                         <td>{{ $key+1 }}</td>
-                        <td>{{ $user['name'] }}</td>
-                        <td>{{ $user['created_at'] }}</td>
-                        <td>{{ $user['email'] }}</td>
-                        <td>{{ $user->position['name'] }}</td>
-                        <td>{{ $user->department['name'] }}</td>
+                        <td>{{ $invite['name'] }}</td>
+                        <td>{{ $invite['created_at'] }}</td>
+                        <td>{{ $invite['email'] }}</td>
+                        <td>{{ $invite->position['name'] }}</td>
+                        <td>{{ $invite->department['name'] }}</td>
+                        <td>
+                            @if ($invite['active'])
+                                Отправлено
+                                @else
+                                Принято
+                            @endif
+                        </td>
                     </tr>
                     @endforeach
                 </table>

@@ -26,8 +26,9 @@ Route::prefix('admin')->group(function(){
     Route::get('position/{userId}', 'PositionController@positionRedact')->name('position_redact');
 
     Route::get('user','PublicController@userlist')->name('user_list');
-    Route::get('user_invite', 'PublicController@invite')->name('user_invite');
-    Route::post('user_invite', 'PublicController@invitePost')->name('userInvitePost');
+    Route::get('invite_list','InviteController@indexList')->name('invite_list');
+    Route::get('user_invite', 'InviteController@invite')->name('user_invite');
+    Route::post('user_invite', 'InviteController@invitePost')->name('userInvitePost');
     Route::get('user/{userId}', 'PublicController@userinfoist');
 
 });
@@ -40,3 +41,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/accept_invite', 'InviteController@acceptInvite')->name('accept_invite');
 Route::Post('/accept_invite', 'InviteController@acceptInvitePost')->name('accept_invite_post');
+
+Route::get('/article', 'ArticleController@indexArticle')->name('article');
